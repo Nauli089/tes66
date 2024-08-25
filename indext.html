@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Jadwal Kelas untuk informasi pelajaran, jadwal piket, dan jadwal guru.">
+    <meta name="author" content="Nama Anda">
+    <title>Jadwal Kelas</title> 
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateName() {
+            if (sessionStorage.getItem('authenticated') === 'true') {
+                return; // Jika sudah terautentikasi, tidak perlu memvalidasi lagi
+            }
+
+            const allowedNames = ["xpm3"];
+
+            // Prompt untuk memasukkan nama
+            let userName = prompt("Masukkan Sandi");
+
+            // Cek apakah nama yang dimasukkan ada dalam daftar nama yang diizinkan
+            if (allowedNames.includes(userName)) {
+                alert("Sandi Benar!Silahkan masuk");
+                // Nama diterima, biarkan halaman tetap
+            } else {
+                alert("Nama tidak diizinkan. Anda akan diarahkan keluar.");
+                // Arahkan pengguna ke halaman error Google
+                window.location.href = "https://www.google.com/search?q=access+denied";
+            }
+        }
+
+        // Jalankan fungsi validasi saat halaman dimuat
+        window.onload = validateName;
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#schedule">Jadwal Pelajaran</a></li>
+            <li><a href="#duty">Piket</a></li>   
+            <li><a href="#teachers">Jadwal Guru</a></li>
+            <li><a href="#uang-kas">Uang Kas</a></li>
+        </ul>
+    </nav>
+
+    <section id="schedule">
+        <h2 class="warna">Jadwal Pelajaran</h2>
+        <table id="schedule-table">
+            <!-- Jadwal Pelajaran akan diisi oleh JavaScript -->
+        </table>
+    </section>
+
+    <section id="duty">
+        <h2>Jadwal Piket</h2>
+        <table id="duty-table" class="hide-waktu">
+            <!-- Jadwal Piket akan diisi oleh JavaScript -->
+        </table>
+    </section>
+
+    <section class="teachers">
+        <h2>Jadwal Guru</h2>
+        <table id="teachers-table">
+            <!-- Jadwal Guru akan diisi oleh JavaScript -->
+        </table>
+    </section>
+
+    <section id="uang-kas">
+        <h2>Uang Kas</h2>
+        <table id="kas-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jumlah (Rp)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data Uang Kas akan diisi oleh JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Form untuk login (tampil jika belum login) -->
+        <form id="login-form">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="kas-form" class="hidden">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+            <label for="jumlah">Jumlah (Rp):</label>
+            <input type="number" id="jumlah" required>
+            <button type="submit">Tambah</button>
+        </form>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+<div id="notification" style="display: none; color: rgb(0, 0, 0); font-weight: bold;"></div>
+<div class="header-title">
+    More interesting features will be released soon!
+</div>
+
+<div class="whatsapp-link" style="text-align: center; margin-top: 20px;">
+    <a href="https://wa.me/6289519761318" style="color: #f5ebeb; text-decoration: none; font-size: 18px;">
+        Request Features? Click here
+    </a>
+</div>
+</html>

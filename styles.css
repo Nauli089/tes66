@@ -1,0 +1,497 @@
+/* Reset beberapa default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #d500fa, #231a24); /* Gradient background ungu */
+    color: #fff;
+    line-height: 1.6;
+    padding-top: 60px; /* Menyediakan ruang untuk header tetap menempel */
+}
+
+/* Header styling */
+header {
+    background: rgba(0, 0, 0, 0.6); /* Background gelap dengan transparansi */
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Ukuran font yang lebih besar */
+    transform: rotate(90deg); /* Memutar teks 90 derajat */
+    transform-origin: left top; /* Mengatur titik rotasi */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s; /* Efek transisi warna */
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Warna hover kuning */
+}
+
+/* Section styling */
+section {
+    padding: 40px 20px;
+    background: #f3f0f0; /* Background putih untuk area konten */
+    border-radius: 12px; /* Sudut membulat */
+    box-shadow: 0 4px 10px rgba(243, 239, 239, 0.1); /* Bayangan lembut */
+    max-width: 800px;
+    margin: 60px auto; /* Menyediakan margin atas untuk menghindari header tetap menutupi konten */
+}
+
+/* Heading styling */
+h2 {
+    border-bottom: 2px solid #333; /* Garis bawah berwarna gelap */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Ukuran font yang lebih besar */
+    color: #000000; /* Warna teks header sesuai dengan garis bawah */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fffdff; /* Background putih untuk tabel */
+    border-radius: 8px; /* Sudut membulat */
+    overflow: hidden; /* Memastikan sudut membulat pada tabel */
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+}
+
+th {
+    background: #7b1fa2; /* Warna latar belakang header tabel */
+    color: #000000; /* Warna teks header tabel */
+}
+
+tr:nth-child(even) {
+    background: #fffcfc; /* Warna latar belakang baris genap */
+}
+
+tr:hover {
+    background: #e0e0e0; /* Warna latar belakang baris saat hover */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Adjust link font size for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Further reduce font size for very small screens */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Further adjust link font size */
+    }
+}
+
+/* Styling untuk tabel uang kas */
+#uang-kas {
+    padding: 20px;
+    margin-top: 60px;
+    background: #fffefe;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(254, 250, 250, 0.2);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#kas-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#kas-form label {
+    font-weight: bold;
+}
+
+#kas-form input {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+#kas-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#kas-table th, #kas-table td {
+    padding: 10px;
+    border: 1px solid hsl(0, 100%, 98%);
+}
+
+#kas-table th {
+    background-color: #7b1fa2;
+    color: #eceaea;
+}
+
+#kas-table tr:nth-child(even) {
+    background-color: #fffbfb;
+}
+
+#kas-table tr:hover {
+    background-color: hsl(0, 100%, 97%);
+}
+
+/* Styling untuk tombol aksi (Edit dan Delete) */
+#kas-table .action-button {
+    background-color: #fff0f0; /* Blue background */
+    color: #000000; /* White text */
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#kas-table .action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#kas-table .action-button.delete {
+    background-color: #dc3545; /* Red background for delete button */
+}
+
+#kas-table .action-button.delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Styling untuk menyembunyikan kolom kedua (Waktu) di tabel dengan class 'hide-waktu' */
+.hide-waktu th:nth-child(2),
+.hide-waktu td:nth-child(2) {
+    display: none;
+}
+
+/* Styling untuk teks dengan class .teachers dan .warna */
+.teachers, .warna {
+    color: #141313;
+}
+
+/* Header title styling */
+.header-title {
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    padding-top: 20px; /* Memberikan jarak dari atas */
+    padding-bottom: 20px; /* Memberikan jarak dari bawah */
+    letter-spacing: 2px; /* Memberikan jarak antar huruf */
+    line-height: 1.5; /* Menambahkan spasi antar baris (jika ada lebih dari satu baris teks) */
+    font-size: 24px; /* Menentukan ukuran font */
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    color: #000000; /* Mengatur warna teks menjadi putih */
+}
+/* Styling untuk tabel dan teks di dalamnya */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #000; /* Warna teks hitam */
+}
+
+th {
+    background: #7b1fa2; /* Background header tabel */
+    color: #fff; /* Warna teks header tabel */
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2; /* Latar belakang baris genap */
+}
+
+tr:hover {
+    background: #e0e0e0; /* Latar belakang baris saat hover */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tree {
+    width: 100%;
+    text-align: center;
+}
+
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.tree li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ffffff;
+    width: 50%;
+    height: 20px;
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ffffff;
+}
+
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 2px solid #ffffff;
+    border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ffffff;
+    width: 0;
+    height: 20px;
+}
+
+.box {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+}
+/* styles.css */
+/* Styling untuk body dan konten utama */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo img {
+    max-width: 80%;
+    height: auto;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Button for closing sidebar */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    background: #f4f4f4;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* Menu button styling */
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+/* Overlay styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
